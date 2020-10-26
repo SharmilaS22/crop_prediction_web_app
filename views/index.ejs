@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Crop Prediction</title>
+
+    <meta author="Sharmi" description="" />
+
+    <!--Boostrap 4 links-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Source+Serif+Pro&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="">Crop Prediction</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo"
+          aria-controls="navbarTogglerDemo"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+        <i style="color: var(--primary)" id='menu-icon' class="fas fa-bars"></i>
+          <!-- <span class="navbar-toggler-icon"></span> -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Predict</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row px-0 pt-6">
+        <div class="col-md-6 p-0 text-center">
+          <img id="svg-header" src="assets/svg1.svg" alt="Agriculture"/>
+        </div>
+        <div class="col-md-6 p-0">
+            <div class="">
+          <h1 id="title-text" class="pr-1">Find the right crop now!</h1>
+          <h4 id="sub-heading" class="text-muted pr-3">
+            Ml algorithms are used to predict the crops exactly matching your
+            needs.
+          </h4>
+          <button type="button" class="my-2 px-1 btn btn-outline-success">
+            <u>Predict crops <i class="fas fa-long-arrow-alt-right"></i> </u>
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="px-0 py-5" style="background-color: var(--lightGreen);">
+          <div class="d-flex justify-content-around flex-wrap">
+  <div class="card text-center shadow my-3">
+  <div class="card-body">
+      <img id="svg-ml" class="py-2" src="assets/artificial-intelligence.svg" alt="ml-algorithm" height=70/>
+    <h4 class="card-title">Machine Learning</h4>
+    <p class="card-text text-muted">Predictions are made by ML algorithms</p>
+    
+  </div>
+</div>
+   <div class="card text-center shadow my-3">
+  <div class="card-body">
+      <img class="py-2" id="svg-rocket" src="assets/startup.svg" alt="ml-algorithm" height=70/>
+    <h4 class="card-title">No experience required</h4>
+    <p class="card-text text-muted">Grow best suited crops with zero experience</p>
+    
+  </div>
+</div>
+</div>
+      </div>
+
+      <div class="container-fluid">
+        <div>
+
+          <button class="btn btn-success">Find Location</button>
+
+          <div class="form-group">
+            <label for="nitrate-val">Nirate:</label>
+            <input
+              type="text"
+              name="userNitrateValue"
+              class="form-control"
+              id="nitrate-val"
+            />
+          </div>
+          
+          <div class="form-group">
+            <label for="phosporous-val">Phosporous:</label>
+            <input
+              type="text"
+              name="userPhosporousValue"
+              class="form-control"
+              id="phosporous-val"
+            />
+          </div>
+          <div class="form-group">
+            <label for="potassium-val">Potassium:</label>
+            <input
+              type="text"
+              name="userPotassiumValue"
+              class="form-control"
+              id="potassium-val"
+            />
+          </div>
+          <div class="form-group">
+            <label for="moisture-val">Moisture:</label>
+            <input
+              type="text"
+              name="userMoistureValue"
+              class="form-control"
+              id="moisture-val"
+            />
+          </div>
+          
+        </div>
+      </div>
+      
+
+      Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+
+    <script type="text/javascript">
+      $('.navbar-toggler').click(() => { 
+            $('#menu-icon').toggleClass('fa-times');
+            $('#menu-icon').toggleClass('fa-bars');
+        });
+    </script>
+    <script src="./geolocation.js"></script>
+  </body>
+</html>
