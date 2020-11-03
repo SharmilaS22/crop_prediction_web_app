@@ -33,7 +33,6 @@
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
     <link
       rel="stylesheet"
       type="text/css"
@@ -49,7 +48,6 @@
   </head>
 
   <body>
-
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="">Crop Prediction</a>
@@ -62,7 +60,11 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-        <i style="color: var(--primary)" id='menu-icon' class="fas fa-bars"></i>
+          <i
+            style="color: var(--primary)"
+            id="menu-icon"
+            class="fas fa-bars"
+          ></i>
           <!-- <span class="navbar-toggler-icon"></span> -->
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo">
@@ -83,99 +85,160 @@
       </nav>
       <div class="row px-0 pt-6">
         <div class="col-md-6 p-0 text-center">
-          <img id="svg-header" src="assets/svg1.svg" alt="Agriculture"/>
+          <img id="svg-header" src="assets/svg1.svg" alt="Agriculture" />
         </div>
         <div class="col-md-6 p-0">
-            <div class="">
-          <h1 id="title-text" class="pr-1">Find the right crop now!</h1>
-          <h4 id="sub-heading" class="text-muted pr-3">
-            Ml algorithms are used to predict the crops exactly matching your
-            needs.
-          </h4>
-          <button type="button" class="my-2 px-1 btn btn-outline-success">
-            <u>Predict crops <i class="fas fa-long-arrow-alt-right"></i> </u>
-          </button>
+          <div class="">
+            <h1 id="title-text" class="pr-1">Find the right crop now!</h1>
+            <h4 id="sub-heading" class="text-muted pr-3">
+              Ml algorithms are used to predict the crops exactly matching your
+              needs.
+            </h4>
+            <button type="button" class="my-2 px-1 btn btn-outline-success">
+              <u>Predict crops <i class="fas fa-long-arrow-alt-right"></i> </u>
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-     <div class="px-0 py-5" style="background-color: var(--lightGreen);">
-          <div class="d-flex justify-content-around flex-wrap">
-  <div class="card text-center shadow my-3">
-  <div class="card-body">
-      <img id="svg-ml" class="py-2" src="assets/artificial-intelligence.svg" alt="ml-algorithm" height=70/>
-    <h4 class="card-title">Machine Learning</h4>
-    <p class="card-text text-muted">Predictions are made by ML algorithms</p>
-    
-  </div>
-</div>
-   <div class="card text-center shadow my-3">
-  <div class="card-body">
-      <img class="py-2" id="svg-rocket" src="assets/startup.svg" alt="ml-algorithm" height=70/>
-    <h4 class="card-title">No experience required</h4>
-    <p class="card-text text-muted">Grow best suited crops with zero experience</p>
-    
-  </div>
-</div>
-</div>
-      </div>
-
-      <div class="container-fluid">
-        <div>
-
-          <button class="btn btn-success">Find Location</button>
-
-          <div class="form-group">
-            <label for="nitrate-val">Nirate:</label>
-            <input
-              type="text"
-              name="userNitrateValue"
-              class="form-control"
-              id="nitrate-val"
+    <div class="px-0 py-5" style="background-color: var(--lightGreen)">
+      <div class="d-flex justify-content-around flex-wrap">
+        <div class="card text-center shadow my-3">
+          <div class="card-body">
+            <img
+              id="svg-ml"
+              class="py-2"
+              src="assets/artificial-intelligence.svg"
+              alt="ml-algorithm"
+              height="70"
             />
+            <h4 class="card-title">Machine Learning</h4>
+            <p class="card-text text-muted">
+              Predictions are made by ML algorithms
+            </p>
           </div>
-          
-          <div class="form-group">
-            <label for="phosporous-val">Phosporous:</label>
-            <input
-              type="text"
-              name="userPhosporousValue"
-              class="form-control"
-              id="phosporous-val"
+        </div>
+        <div class="card text-center shadow my-3">
+          <div class="card-body">
+            <img
+              class="py-2"
+              id="svg-rocket"
+              src="assets/startup.svg"
+              alt="ml-algorithm"
+              height="70"
             />
+            <h4 class="card-title">No experience required</h4>
+            <p class="card-text text-muted">
+              Grow best suited crops with zero experience
+            </p>
           </div>
-          <div class="form-group">
-            <label for="potassium-val">Potassium:</label>
-            <input
-              type="text"
-              name="userPotassiumValue"
-              class="form-control"
-              id="potassium-val"
-            />
-          </div>
-          <div class="form-group">
-            <label for="moisture-val">Moisture:</label>
-            <input
-              type="text"
-              name="userMoistureValue"
-              class="form-control"
-              id="moisture-val"
-            />
-          </div>
-          
         </div>
       </div>
-      
+    </div>
 
-      Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+    <div class="container-fluid">
+      <div>
+        <!-- <form method="POST" action="/"> -->
+
+        <button id="accessLocation" class="btn btn-outline-dark">
+          Click to access location
+        </button>
+
+        <form method="POST" action="/">
+          <div class="form-group">
+            <label for="loc-latitude">Latitude:</label>
+            <input
+              type="text"
+              name="locLatitude"
+              class="form-control"
+              id="loc-latitude"
+            />
+          </div>
+          <div class="form-group">
+            <label for="loc-longitude">Longitude:</label>
+            <input
+              type="text"
+              name="locLongitude"
+              class="form-control"
+              id="loc-longitude"
+            />
+          </div>
+
+          <button
+            type="submit"
+            id="findTemperature"
+            class="btn btn-outline-dark"
+          >
+            Find Temperature
+          </button>
+        </form>
+        <!-- </form> -->
+
+        <button class="btn btn-success">Find Location</button>
+
+        <div class="form-group">
+          <label for="nitrate-val">Nirate:</label>
+          <input
+            type="text"
+            name="userNitrateValue"
+            class="form-control"
+            id="nitrate-val"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phosporous-val">Phosporous:</label>
+          <input
+            type="text"
+            name="userPhosporousValue"
+            class="form-control"
+            id="phosporous-val"
+          />
+        </div>
+        <div class="form-group">
+          <label for="potassium-val">Potassium:</label>
+          <input
+            type="text"
+            name="userPotassiumValue"
+            class="form-control"
+            id="potassium-val"
+          />
+        </div>
+        <div class="form-group">
+          <label for="moisture-val">Moisture:</label>
+          <input
+            type="text"
+            name="userMoistureValue"
+            class="form-control"
+            id="moisture-val"
+          />
+        </div>
+      </div>
+    </div>
+
+    Icons made by
+    <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
+      >Freepik</a
+    >
+    from
+    <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
     <script type="text/javascript">
-      $('.navbar-toggler').click(() => { 
-            $('#menu-icon').toggleClass('fa-times');
-            $('#menu-icon').toggleClass('fa-bars');
+      $(".navbar-toggler").click(() => {
+        $("#menu-icon").toggleClass("fa-times");
+        $("#menu-icon").toggleClass("fa-bars");
+      });
+      $("#accessLocation").click(() => {
+        navigator.geolocation.getCurrentPosition((loc) => {
+          const lat = loc.coords.latitude;
+          const long = loc.coords.longitude;
+          $("#loc-latitude").val(lat);
+          $("#loc-longitude").val(long);
+          console.log("lat long", lat, long);
         });
+      });
     </script>
-    <script src="./geolocation.js"></script>
+    <!-- <script src="./geolocation.js"></script> -->
   </body>
 </html>

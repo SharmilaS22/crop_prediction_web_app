@@ -77,21 +77,41 @@
         </div>
       </nav>
       <div class="row">
-          <div class="col-md-6">
-        <h1 id="title-text">Find the right crop now!</h1>
-        <h4 id="sub-heading">Ml algorithms are used to predict the crops exactly matching your needs.</h4>
-        <button type="button" class="btn  btn-lg btn-dark mr-2">
-          <i class="fab fa-apple"></i>
-          Download
+        <div class="col-md-6">
+          <h1 id="title-text">Find the right crop now!</h1>
+          <h4 id="sub-heading">
+            Ml algorithms are used to predict the crops exactly matching your
+            needs.
+          </h4>
+          <button type="button" class="btn btn-lg btn-dark mr-2">
+            <i class="fab fa-apple"></i>
+            Download
+          </button>
+          <button type="button" class="btn btn-lg btn-outline-light">
+            <u>Predict crops </u>
+          </button>
+        </div>
+        <div class="col-lg-6">
+          <img id="phone" src="assets/Gardening-amico.svg" alt="Agriculture" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <form method="POST" action="/">
+        <button id="accessLocation" class="btn btn-outline-dark">
+          Click to access location
         </button>
-        <button type="button" class="btn btn-lg btn-outline-light">
-          <u>Predict crops </u>
-        </button>
-      </div>
-      <div class="col-lg-6">
-        <img id="phone" src="assets/Gardening-amico.svg" alt="Agriculture">
-      </div>
-      </div>
+        <div class="form-group">
+          <label for="loc-latitude">Location:</label>
+          <input
+            type="text"
+            name="locLatitude"
+            class="form-control"
+            id="loc-latitude"
+          />
+        </div>
+      </form>
     </div>
 
     <script type="text/javascript">
@@ -101,7 +121,13 @@
           1000
         );
       });
+      $("#accessLocation").click(() => {
+        navigator.geolocation.getCurrentPosition((loc) => {
+          const lat = loc.coords.latitude;
+          const long = loc.coords.longitude;
+          $("#loc-latitude").value = lat;
+        });
+      });
     </script>
-    
   </body>
 </html>

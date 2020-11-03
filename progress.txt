@@ -1,0 +1,10 @@
+03/11/2020
+-----------------
+steps:
+ * data to python in javascript
+ * data from csv in py
+ * jupyter notebook - work with data
+ * train with algo
+ * download as .py file
+ * display the crops
+ 
